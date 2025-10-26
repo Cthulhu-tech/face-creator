@@ -1,0 +1,68 @@
+{
+  "sheet": {
+    "src": "sprites/face_atlas/face_atlas.png",
+    "tileWidth": 166,
+    "tileHeight": 258,
+    "imageWidth": 1328,
+    "imageHeight": 4128,
+    "gridCols": 8,
+    "gridRows": 16
+  },
+  "data": {
+    "face": [
+      { "column": 0, "color": "light", "rowsPerColumn": 8 },
+      { "column": 1, "color": "tan",   "rowsPerColumn": 8 },
+      { "column": 2, "color": "dark",  "rowsPerColumn": 8 }
+    ],
+    "lips": [
+      { "column": 3, "color": "light", "rowsPerColumn": 8 },
+      { "column": 4, "color": "tan",   "rowsPerColumn": 8 },
+      { "column": 5, "color": "dark",  "rowsPerColumn": 8 }
+    ],
+    "noses": [
+      { "column": 6, "color": "light", "rowsPerColumn": 8 },
+      { "column": 7, "color": "tan",   "rowsPerColumn": 8 },
+      { "column": 8, "color": "dark",  "rowsPerColumn": 8 }
+    ],
+    "eyes": [
+      { "column": 9,  "color": "light", "rowsPerColumn": 8 },
+      { "column": 10, "color": "tan",   "rowsPerColumn": 8 },
+      { "column": 11, "color": "dark",  "rowsPerColumn": 8 }
+    ],
+    "hair": {
+      "columns": [
+        { "column": 12, "rowsPerColumn": 8 },
+        { "column": 13, "rowsPerColumn": 8 },
+        { "column": 14, "rowsPerColumn": 8 }
+      ],
+      "items": [
+        { "index": 0,  "col": 12, "row": 0, "description": "" },
+        { "index": 1,  "col": 12, "row": 1, "description": "" },
+        { "index": 2,  "col": 12, "row": 2, "description": "" },
+        { "index": 3,  "col": 12, "row": 3, "description": "" },
+        { "index": 4,  "col": 12, "row": 4, "description": "" },
+        { "index": 5,  "col": 12, "row": 5, "description": "" },
+        { "index": 6,  "col": 12, "row": 6, "description": "" },
+        { "index": 7,  "col": 12, "row": 7, "description": "" },
+
+        { "index": 8,  "col": 13, "row": 0, "description": "" },
+        { "index": 9,  "col": 13, "row": 1, "description": "" },
+        { "index": 10, "col": 13, "row": 2, "description": "" },
+        { "index": 11, "col": 13, "row": 3, "description": "" },
+        { "index": 12, "col": 13, "row": 4, "description": "" },
+        { "index": 13, "col": 13, "row": 5, "description": "" },
+        { "index": 14, "col": 13, "row": 6, "description": "" },
+        { "index": 15, "col": 13, "row": 7, "description": "" },
+
+        { "index": 16, "col": 14, "row": 0, "description": "" },
+        { "index": 17, "col": 14, "row": 1, "description": "" },
+        { "index": 18, "col": 14, "row": 2, "description": "" },
+        { "index": 19, "col": 14, "row": 3, "description": "" },
+        { "index": 20, "col": 14, "row": 4, "description": "" },
+        { "index": 21, "col": 14, "row": 5, "description": "" },
+        { "index": 22, "col": 14, "row": 6, "description": "" },
+        { "index": 23, "col": 14, "row": 7, "description": "" }
+      ]
+    }
+  }
+}
