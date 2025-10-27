@@ -44,16 +44,16 @@ class ButtonImageChange {
 
     this.leftBtn.add(leftBg,  { column: 0, row: 0, align: 'center', expand: true });
     this.rightBtn.add(rightBg, { column: 0, row: 0, align: 'center', expand: true });
-
     leftBg.setInteractive({ useHandCursor: true })
       .on('pointerup', () => {
-        image.setTexture(Tiles.face_atlas, (image.image.name - 1).toString());
+        console.log(image.frame.name)
+        image.setTexture(Tiles.face_atlas, (image.frame.name - 1).toString());
         console.log('left clicked', name);
       });
 
     rightBg.setInteractive({ useHandCursor: true })
       .on('pointerup', () => {
-        image.setTexture(Tiles.face_atlas, (image.image.name + 1).toString());
+        image.setTexture(Tiles.face_atlas, (image.frame.name + 1).toString());
         console.log('right clicked', name);
       });
 
@@ -74,8 +74,8 @@ export class Game extends Scene {
   create() {
     const face = this.rexUI.add.imageBox(this.scale.width / 2, this.scale.height / 2, Tiles.face_atlas, '0');
     const eyes = this.rexUI.add.imageBox(this.scale.width / 2, this.scale.height / 2, Tiles.face_atlas, '72');
-    const nose = this.rexUI.add.imageBox(this.scale.width / 2, this.scale.height / 2, Tiles.face_atlas, '48');
     const lips = this.rexUI.add.imageBox(this.scale.width / 2, this.scale.height / 2, Tiles.face_atlas, '24');
+    const nose = this.rexUI.add.imageBox(this.scale.width / 2, this.scale.height / 2, Tiles.face_atlas, '48');
     const hair = this.rexUI.add.imageBox(this.scale.width / 2, this.scale.height / 2, Tiles.face_atlas, '96');
     
     const btnFace = new ButtonImageChange(this, 'face', face);
