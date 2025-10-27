@@ -11,8 +11,8 @@ const config: Phaser.Types.Core.GameConfig = {
     antialiasGL: false,
     pixelArt: true,
     preserveDrawingBuffer: true,
-    roundPixels: false,
-    antialias: false,
+    roundPixels: true,
+    antialias: true,
     autoRound: true,
     scale: {
         width: 800,
