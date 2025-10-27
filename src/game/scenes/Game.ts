@@ -8,6 +8,7 @@ class ButtonImageChange {
   btn: GridSizer;
   leftBtn: GridSizer;
   rightBtn: GridSizer;
+
   constructor(scene: Game, name: string, image: ImageBox) {
     this.btn = scene.rexUI.add.gridSizer({
       x: 0,
@@ -28,7 +29,7 @@ class ButtonImageChange {
       columnProportions: [1],
       rowProportions: [1],
     });
-    
+
     this.rightBtn = scene.rexUI.add.gridSizer({
       x: 0,
       y: 0,
@@ -38,36 +39,28 @@ class ButtonImageChange {
       rowProportions: [1],
     });
 
-    const leftBg = scene.rexUI.add.roundRectangle(0, 0, 0, 0, 0, 0xffffff);
-    const rightBg = scene.rexUI.add.roundRectangle(0, 0, 0, 0, 0, 0xffffff);
+    const leftBg  = scene.add.rectangle(0, 0, 1, 1, 0xffffff);
+    const rightBg = scene.add.rectangle(0, 0, 1, 1, 0xffffff);
 
-    this.leftBtn.add(leftBg, {
-      column: 0,
-      row: 0,
-      align: 'center',
-      expand: true,
-    });
+    this.leftBtn.add(leftBg,  { column: 0, row: 0, align: 'center', expand: true });
+    this.rightBtn.add(rightBg, { column: 0, row: 0, align: 'center', expand: true });
 
-    this.rightBtn.add(rightBg, {
-      column: 0,
-      row: 0,
-      align: 'center',
-      expand: true,
-    });
+    leftBg.setInteractive({ useHandCursor: true })
+      .on('pointerup', () => {
+        image.setTexture(Tiles.face_atlas, (image.image.name - 1).toString());
+        console.log('left clicked', name);
+      });
 
-    this.btn.add(leftBg, {
-      column: 0,
-      row: 0,
-      align: 'center',
-      expand: true,
-    }).add(rightBg, {
-      column: 2,
-      row: 0,
-      align: 'center',
-      expand: true,
-    })
-      .setOrigin(0, 0)
-      .layout();
+    rightBg.setInteractive({ useHandCursor: true })
+      .on('pointerup', () => {
+        image.setTexture(Tiles.face_atlas, (image.image.name + 1).toString());
+        console.log('right clicked', name);
+      });
+
+    this.btn.add(this.leftBtn,  { column: 0, row: 0, align: 'center', expand: true });
+    this.btn.add(this.rightBtn, { column: 2, row: 0, align: 'center', expand: true });
+
+    this.btn.layout();
   }
 }
 
@@ -86,6 +79,60 @@ export class Game extends Scene {
     const hair = this.rexUI.add.imageBox(this.scale.width / 2, this.scale.height / 2, Tiles.face_atlas, '96');
     
     const btnFace = new ButtonImageChange(this, 'face', face);
-    
+    const btnEyes = new ButtonImageChange(this, 'eyes', eyes);
+    const btnNose = new ButtonImageChange(this, 'nose', nose);
+    const btnLips = new ButtonImageChange(this, 'lips', lips);
+    const btnHair = new ButtonImageChange(this, 'hair', hair);
+
+    this.rexUI.add.gridSizer({
+      width: 200,
+      column: 1,
+      row: 5,
+      columnProportions: [1],
+      rowProportions: [1, 1, 1, 1, 1],
+      x: 0,
+      y: 0,
+    })
+      .setOrigin(0, 0)
+      .add(btnFace.btn, {
+        expand: true,
+        column: 0,
+        row: 0,
+        padding: {
+          top: 10
+        }
+      })
+      .add(btnEyes.btn, {
+        expand: true,
+        column: 0,
+        row: 1,
+        padding: {
+          top: 10
+        }
+      })
+      .add(btnNose.btn, {
+        expand: true,
+        column: 0,
+        row: 2,
+        padding: {
+          top: 10
+        }
+      })
+      .add(btnLips.btn, {
+        expand: true,
+        column: 0,
+        row: 3,
+        padding: {
+          top: 10
+        }
+      })
+      .add(btnHair.btn, {
+        expand: true,
+        column: 0,
+        row: 4,
+        padding: {
+          top: 10
+        }
+      }).layout();
   }
 }
