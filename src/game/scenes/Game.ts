@@ -72,11 +72,16 @@ export class Game extends Scene {
   }
 
   create() {
-    const face = this.rexUI.add.imageBox(this.scale.width / 2, this.scale.height / 2, Tiles.face_atlas, '0');
-    const eyes = this.rexUI.add.imageBox(this.scale.width / 2, this.scale.height / 2, Tiles.face_atlas, '72');
-    const lips = this.rexUI.add.imageBox(this.scale.width / 2, this.scale.height / 2, Tiles.face_atlas, '24');
-    const nose = this.rexUI.add.imageBox(this.scale.width / 2, this.scale.height / 2, Tiles.face_atlas, '48');
-    const hair = this.rexUI.add.imageBox(this.scale.width / 2, this.scale.height / 2, Tiles.face_atlas, '96');
+    const imageConfig = {
+      scaleUp: true,
+      width: 500,
+      height: 500,
+    };
+    const face = this.rexUI.add.imageBox(this.scale.width / 2, this.scale.height / 2, Tiles.face_atlas, '0', imageConfig);
+    const eyes = this.rexUI.add.imageBox(this.scale.width / 2, this.scale.height / 2, Tiles.face_atlas, '72', imageConfig);
+    const lips = this.rexUI.add.imageBox(this.scale.width / 2, this.scale.height / 2, Tiles.face_atlas, '24', imageConfig);
+    const nose = this.rexUI.add.imageBox(this.scale.width / 2, this.scale.height / 2, Tiles.face_atlas, '48', imageConfig);
+    const hair = this.rexUI.add.imageBox(this.scale.width / 2, this.scale.height / 2, Tiles.face_atlas, '96', imageConfig);
     
     const btnFace = new ButtonImageChange(this, 'face', face);
     const btnEyes = new ButtonImageChange(this, 'eyes', eyes);
